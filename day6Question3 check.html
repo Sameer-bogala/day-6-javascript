@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>q</title>
+    <style>
+       
+        
+        body {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            
+        }
+       
+            #clock
+
+        {
+            font-size: 90px;
+            background-color: burlywood;
+            padding: 0,5em 0em;
+            width: 80%;
+            margin: 0px auto;
+            font-family: Arial, Helvetica, sans-serif,sans-serif;
+        }
+
+        #header {
+            font-size: 50px;
+            background-color: rgba(236,13,50,0.5);
+            padding: 0.5em 0em;
+            width: 80%;
+            margin: 15% auto 0%;
+            font-family: Arial, Helvetica, sans-serif,sans-serif;
+        }
+
+        #t1 {
+            background-color: lightpink;
+            color: white;
+            font-style: oblique;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: Arial, Helvetica, sans-serif,sans-serif;
+        }
+
+        #click {
+            background-color: darkgray;
+            color: white;
+            font-style: oblique;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif,sans-serif;
+        }
+
+       
+        
+     
+    </style>
+       <script> function f1() {
+            var obj = document.getElementById("t1");
+            var str = "welcometo<u>" + obj.value + "</u>";
+            var obj2 = document.getElementById("p1");
+            obj2 .innerHTML = str;
+        }</script>
+    
+</head>
+
+<body>
+
+    
+    <script>
+
+        setInterval(function () {
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+            var period = "AM";
+            if (hours >= 12) {
+                period = "PM";
+            }
+            if (hours > 12) {
+                hours = hours - 12;
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            var clockTime = hours + ":" + minutes + ":" + seconds + " " + period;
+            var clock = document.getElementById('clock');
+            clock.innerText = clockTime;
+        }, 1000);
+
+
+        const darkmode = document.body.style.backgroundColor = "skyblue"
+        document.body.style.color = 'white';
+        darkmode.classList.remove('black');
+        darkmode.classList.toggle('black');
+
+    </script>
+    
+
+
+
+
+    <h1>javascript demo</h1>
+    <hr />
+    <h1>user name:<input type="text" id="t1" /></h1>
+    <br /><input type="button" value="press here to continue" onclick="f1()" id="click" />
+    <p id="p1"></p>
+    <div id="header"><span>cross overclock</span></div>
+    <div id="clock"></div>
+
+
+</body>
+</html>
